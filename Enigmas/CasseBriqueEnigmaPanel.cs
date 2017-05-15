@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Media;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Cpln.Enigmos.Enigmas
@@ -21,6 +12,8 @@ namespace Cpln.Enigmos.Enigmas
             int iLargeurBrique = 100;
             int iHauteurBrique = 30;
             int iLargeurPlateforme = 50;
+            int X = 0;
+            int Y = 0;
             for (int i = 0; i < 8; i++)
             {
                 Label dynamicLabel = new Label();
@@ -28,6 +21,17 @@ namespace Cpln.Enigmos.Enigmas
                 dynamicLabel.Width = 100;
                 dynamicLabel.Height = 100;
                 dynamicLabel.BackColor = Color.Yellow;
+                dynamicLabel.Left = X;
+                dynamicLabel.Top = Y;
+                if (X != 800)
+                {
+                    X += 100;
+                }
+                else
+                {
+                    X = 0;
+                    Y += 30;
+                }
             }
         }
     }
