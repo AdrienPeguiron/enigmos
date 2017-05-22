@@ -1,29 +1,44 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using System;
 
 namespace Cpln.Enigmos.Enigmas
 {
+    /// <summary>
+    /// Un casse brique classique
+    /// </summary>
     class CasseBriqueEnigmaPanel : EnigmaPanel
     {
+        /// <summary>
+        /// constructeur de base sans paramètres
+        /// </summary>
         public CasseBriqueEnigmaPanel()
         {
+            //largeur de la fenêtre
             int iLargeur = 800;
+            //hauteur de la fenêtre
             int iHauteur = 600;
+            //largeur des rectangles à casser
             int iLargeurBrique = 100;
+            //hauteur des rectangles à casser
             int iHauteurBrique = 30;
             int iLargeurPlateforme = 50;
             int X = 0;
             int Y = 0;
-            for (int i = 0; i < 8; i++)
+            Random rndRGB = new Random();
+            for (int i = 0; i < 24; i++)
             {
+                Color rndColor = Color.FromArgb(rndRGB.Next(240), rndRGB.Next(240), rndRGB.Next(255));
                 Label dynamicLabel = new Label();
                 dynamicLabel.Name = "Label" + (i + 1);
-                dynamicLabel.Width = 100;
-                dynamicLabel.Height = 100;
-                dynamicLabel.BackColor = Color.;
+                dynamicLabel.Width = iLargeurBrique;
+                dynamicLabel.Height = iHauteurBrique;
+                dynamicLabel.BackColor = rndColor;
+                dynamicLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                 dynamicLabel.Left = X;
                 dynamicLabel.Top = Y;
-                if (X != 800)
+                Controls.Add(dynamicLabel);
+                if (X < 700)
                 {
                     X += 100;
                 }
@@ -33,6 +48,7 @@ namespace Cpln.Enigmos.Enigmas
                     Y += 30;
                 }
             }
+
         }
     }
 }

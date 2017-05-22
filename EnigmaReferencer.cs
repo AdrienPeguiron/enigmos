@@ -17,7 +17,7 @@ namespace Cpln.Enigmos
         /// <returns>L'énigme à afficher</returns>
         public static Enigma DebugEnigma()
         {
-            return new Enigma(new SwitchesEnigmaPanel(3, "LUMINEUX"), "Allumez tout");
+            return new Enigma(new CasseBriqueEnigmaPanel(), "Casse brique");
         }
 
         /// <summary>
@@ -63,6 +63,7 @@ namespace Cpln.Enigmos
             enigmas.Add(new Enigma(new TapeTaupeEnigmaPanel(), "Tape-taupe"));
             enigmas.Add(new Enigma(new TrouverEnigmaPanel(), "Trouver Cristiano"));
             enigmas.Add(new Enigma(new ZombieInvasionEnigmaPanel(), "ZombieInvasion"));
+            enigmas.Add(new Enigma(new CasseBriqueEnigmaPanel(), "Casse brique"));
 
             // Énigmes avec prérequis
 

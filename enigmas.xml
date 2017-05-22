@@ -166,4 +166,8 @@
     <answer>poisson</answer>
     <hint>C'est un animal.</hint>
   </enigma>
+  <enigma title="Casse brique">
+    <answer>barracuda</answer>
+    <hint>Cassez les briques</hint>
+  </enigma>
 </enigmas>
