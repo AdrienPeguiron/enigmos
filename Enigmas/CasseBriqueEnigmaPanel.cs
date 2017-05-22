@@ -34,7 +34,7 @@ namespace Cpln.Enigmos.Enigmas
                 dynamicLabel.Width = iLargeurBrique;
                 dynamicLabel.Height = iHauteurBrique;
                 dynamicLabel.BackColor = rndColor;
-                dynamicLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                dynamicLabel.BorderStyle = BorderStyle.FixedSingle;
                 dynamicLabel.Left = X;
                 dynamicLabel.Top = Y;
                 Controls.Add(dynamicLabel);
