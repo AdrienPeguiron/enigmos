@@ -20,7 +20,7 @@ namespace Cpln.Enigmos.Enigmas
                 dynamicLabel.Name = "Label" + (i + 1);
                 dynamicLabel.Width = 100;
                 dynamicLabel.Height = 100;
-                dynamicLabel.BackColor = Color.Yellow;
+                dynamicLabel.BackColor = Color.;
                 dynamicLabel.Left = X;
                 dynamicLabel.Top = Y;
                 if (X != 800)
