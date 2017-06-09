@@ -9,11 +9,17 @@ namespace Cpln.Enigmos.Enigmas
     /// </summary>
     class CasseBriqueEnigmaPanel : EnigmaPanel
     {
+        //création d'un timer gérant les déplacements de la plateforme et de la balle
+        Timer timer = new Timer();
         /// <summary>
         /// constructeur de base sans paramètres
         /// </summary>
         public CasseBriqueEnigmaPanel()
         {
+            //le temps entre chaque tic sera de une milliseconde
+            Timer.Interval = 1;
+            //ajout d'un événement pour chaque tic
+            Timer.Tick += new EventHandler(Timer_Tick);
             //largeur de la fenêtre
             int iLargeur = 800;
 
@@ -60,15 +66,15 @@ namespace Cpln.Enigmos.Enigmas
                     X = iLargeur / 2 - iLargeurPlateforme / 2;
 
                     //positionne la brique contrôlable au trois quarts de l'axe des Y
-                    Y = (iHauteur / 4)*3;
+                    Y = (iHauteur / 4) * 3;
                 }
                 else
                 {
-                //donne les nom des briques à casser
-                dynamicLabel.Name = "LblBrique" + (i + 1);
+                    //donne les nom des briques à casser
+                    dynamicLabel.Name = "LblBrique" + (i + 1);
 
-                //définit la longueur des briques à casser
-                dynamicLabel.Width = iLargeurBrique;
+                    //définit la longueur des briques à casser
+                    dynamicLabel.Width = iLargeurBrique;
 
                 }
                 //définit la hauteur des briques
@@ -102,6 +108,33 @@ namespace Cpln.Enigmos.Enigmas
                 }
 
             }
+            //PictureBx contenant la balle
+            PictureBox pbxBalle = new PictureBox();
+            //définission de la taille de la balle
+            pbxBalle.Size = new Size(30, 30);
+            //on séléctionne l'image voulue
+            pbxBalle.Image = Properties.Resources.balletennispovray___Copie;
+            //on pose la balle au milieu sur l'axe horizontal
+            pbxBalle.Left = iLargeur / 2 - pbxBalle.Width / 2;
+            //on pose la balle au dessus de la plateforme sur l'axe vertical
+            pbxBalle.Top = (iHauteur / 4) * 3 - iHauteurBrique;
+            //fait en sorte que la balle soit à la taille de la PictureBox
+            pbxBalle.SizeMode = PictureBoxSizeMode.StretchImage;
+            //on ajoute la balle
+            Controls.Add(pbxBalle);
+        }
+        /// <summary>
+        /// déplace la plateforme en fonction des touches pressées
+        /// </summary>
+        public override void PressKey(object sender, KeyEventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// gère le déplacement de la balle
+        /// </summary>
+        private void Timer_Tick(object sender, EventArgs e)
+        {
 
         }
     }

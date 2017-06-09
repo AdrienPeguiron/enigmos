@@ -82,6 +82,16 @@ namespace Cpln.Enigmos.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap balletennispovray___Copie {
+            get {
+                object obj = ResourceManager.GetObject("balletennispovray___Copie", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap banane {
             get {
                 object obj = ResourceManager.GetObject("banane", resourceCulture);
